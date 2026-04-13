@@ -82,8 +82,9 @@ body {
 }
 
 .hero__brand {
-  display: grid;
-  justify-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   gap: 1rem;
   margin-bottom: 1.5rem;
 }
@@ -109,9 +110,8 @@ body {
 }
 
 .eyebrow,
-.section-label,
-.event-card__venue {
-  letter-spacing: 0.14em;
+.section-label {
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
@@ -160,25 +160,20 @@ body {
   line-height: 1.75;
 }
 
-.hero__meta {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.75rem;
-  margin-top: 1.5rem;
-}
-
 .hero .eyebrow,
 .hero h1,
 .hero__lede,
-.hero__dates,
-.hero .meta-pill {
+.hero__dates {
   position: relative;
   z-index: 1;
 }
 
 .hero .eyebrow {
   margin: 0;
+  font-size: 1.2rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: none;
   color: rgba(255, 245, 225, 0.92);
 }
 
@@ -191,22 +186,11 @@ body {
   text-wrap: balance;
 }
 
-.meta-pill,
 .event-card__badge,
 .day-summary__item {
   display: inline-flex;
   align-items: center;
   border-radius: 999px;
-}
-
-.meta-pill {
-  padding: 0.75rem 1.05rem;
-  background: rgba(8, 40, 45, 0.38);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(8px);
-  font-size: 1rem;
-  font-weight: 600;
-  color: white;
 }
 
 .programme-app {
@@ -283,6 +267,10 @@ body {
 
 .tab-content {
   padding: 0 1rem 1rem;
+}
+
+.tab-pane {
+  scroll-margin-top: 1rem;
 }
 
 .day-page {
@@ -366,6 +354,7 @@ body {
   margin: 0;
   font-size: 1.05rem;
   font-weight: 800;
+  line-height: 1.45;
   color: var(--sunset-deep);
 }
 
