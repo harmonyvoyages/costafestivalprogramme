@@ -10,5 +10,7 @@ Use HTML 5
 CSS 3
 Style with Bootstrap or Tailwind - your choice
 Keep it simple.
+Use minimum font sizes in the rangr 16pt - 20pt. The audience is aged 60+ and readability/accessible is high priority.
+
 
 

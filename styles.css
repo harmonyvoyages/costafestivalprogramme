@@ -2,15 +2,15 @@
   --sand: #f7f1df;
   --sand-deep: #e7d9b3;
   --ink: #16333a;
-  --ink-soft: #355962;
+  --ink-soft: #244951;
   --sea: #0d6d76;
-  --sea-soft: #dff4f2;
+  --sea-soft: #edf7f6;
   --sunset: #f38d68;
   --sunset-deep: #d55e49;
   --gold: #f4c768;
-  --panel: rgba(255, 250, 239, 0.86);
-  --line: rgba(22, 51, 58, 0.12);
-  --shadow: 0 24px 50px rgba(17, 51, 57, 0.14);
+  --panel: #fffaf1;
+  --line: rgba(22, 51, 58, 0.18);
+  --shadow: 0 24px 50px rgba(17, 51, 57, 0.12);
 }
 
 * {
@@ -18,7 +18,9 @@
 }
 
 html {
+  font-size: 125%;
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -26,10 +28,11 @@ body {
   min-width: 320px;
   font-family: "Manrope", sans-serif;
   color: var(--ink);
+  line-height: 1.7;
   background:
-    radial-gradient(circle at top right, rgba(243, 141, 104, 0.26), transparent 30%),
-    radial-gradient(circle at 20% 20%, rgba(244, 199, 104, 0.35), transparent 22%),
-    linear-gradient(180deg, #fcf7e8 0%, #f6efd7 40%, #eff9f9 100%);
+    radial-gradient(circle at top right, rgba(243, 141, 104, 0.22), transparent 32%),
+    radial-gradient(circle at 18% 18%, rgba(244, 199, 104, 0.28), transparent 24%),
+    linear-gradient(180deg, #fdf9ee 0%, #f7f0dd 42%, #f2faf9 100%);
 }
 
 .site-shell {
@@ -115,7 +118,7 @@ body {
 .eyebrow,
 .section-label {
   margin-bottom: 0.75rem;
-  font-size: 0.72rem;
+  font-size: 1.05rem;
   font-weight: 700;
   color: var(--sunset-deep);
 }
@@ -141,7 +144,7 @@ body {
 
 .hero__dates {
   margin: 0.75rem 0 0;
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 700;
   color: #dff4f2;
 }
@@ -152,8 +155,9 @@ body {
 .site-footer p {
   margin: 0;
   max-width: 42rem;
+  font-size: 1.05rem;
   color: var(--ink-soft);
-  line-height: 1.65;
+  line-height: 1.75;
 }
 
 .hero__meta {
@@ -196,11 +200,11 @@ body {
 }
 
 .meta-pill {
-  padding: 0.7rem 1rem;
-  background: rgba(8, 40, 45, 0.28);
-  border: 1px solid rgba(255, 255, 255, 0.24);
+  padding: 0.75rem 1.05rem;
+  background: rgba(8, 40, 45, 0.38);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(8px);
-  font-size: 0.92rem;
+  font-size: 1rem;
   font-weight: 600;
   color: white;
 }
@@ -210,11 +214,10 @@ body {
 }
 
 .programme-panel {
-  border: 1px solid rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.72);
   border-radius: 1.75rem;
   background: var(--panel);
   box-shadow: var(--shadow);
-  backdrop-filter: blur(14px);
   overflow: hidden;
 }
 
@@ -229,24 +232,19 @@ body {
 }
 
 .day-menu {
-  display: flex;
-  gap: 0.75rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.85rem;
   padding: 1.25rem;
-  overflow-x: auto;
-  scrollbar-width: none;
-}
-
-.day-menu::-webkit-scrollbar {
-  display: none;
 }
 
 .day-menu .nav-link {
-  flex: 0 0 auto;
-  min-width: 7.5rem;
-  padding: 0.95rem 1rem;
-  border: 1px solid var(--line);
+  width: 100%;
+  padding: 1rem 1.1rem;
+  border: 1px solid rgba(22, 51, 58, 0.16);
   border-radius: 1.15rem;
-  background: rgba(255, 255, 255, 0.76);
+  background: #fffdfa;
+  box-shadow: 0 8px 18px rgba(22, 51, 58, 0.05);
   color: var(--ink);
   text-align: left;
   transition: transform 180ms ease, background-color 180ms ease, border-color 180ms ease;
@@ -259,7 +257,7 @@ body {
 }
 
 .day-menu .nav-link.active {
-  background: linear-gradient(135deg, var(--sunset) 0%, var(--sunset-deep) 100%);
+  background: linear-gradient(135deg, #0d6d76 0%, #0a4f56 100%);
   border-color: transparent;
   color: white;
 }
@@ -270,16 +268,16 @@ body {
 }
 
 .day-menu__day {
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  opacity: 0.82;
+  opacity: 0.88;
 }
 
 .day-menu__date {
-  margin-top: 0.2rem;
-  font-size: 1.1rem;
+  margin-top: 0.25rem;
+  font-size: 1.25rem;
   font-weight: 800;
 }
 
@@ -290,8 +288,7 @@ body {
 .day-page {
   border: 1px solid var(--line);
   border-radius: 1.5rem;
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.92) 0%, rgba(250, 244, 228, 0.94) 100%);
+  background: #fffdfa;
   overflow: hidden;
 }
 
@@ -309,7 +306,7 @@ body {
 }
 
 .day-page__intro {
-  font-size: 0.98rem;
+  font-size: 1.05rem;
 }
 
 .day-summary {
@@ -319,56 +316,55 @@ body {
 }
 
 .day-summary__item {
-  padding: 0.55rem 0.85rem;
-  background: rgba(255, 255, 255, 0.82);
-  border: 1px solid rgba(13, 109, 118, 0.14);
-  font-size: 0.88rem;
+  padding: 0.65rem 0.95rem;
+  background: #fff;
+  border: 1px solid rgba(13, 109, 118, 0.18);
+  font-size: 1rem;
   font-weight: 700;
   color: var(--sea);
 }
 
 .programme-scroll {
-  max-height: min(68vh, 52rem);
-  overflow-y: auto;
   padding: 1rem 1rem 1.25rem;
 }
 
 .timeline {
   display: grid;
-  gap: 0.9rem;
+  gap: 1rem;
 }
 
 .event-card {
   display: grid;
   gap: 0.85rem;
-  padding: 1rem;
-  border: 1px solid rgba(22, 51, 58, 0.08);
+  padding: 1.1rem;
+  border: 1px solid rgba(22, 51, 58, 0.1);
   border-radius: 1.2rem;
-  background: rgba(255, 255, 255, 0.82);
-  box-shadow: 0 10px 24px rgba(22, 51, 58, 0.06);
+  background: #fff;
+  box-shadow: 0 8px 18px rgba(22, 51, 58, 0.05);
 }
 
 .event-card__time {
   display: inline-flex;
   align-items: center;
   width: fit-content;
-  padding: 0.35rem 0.7rem;
+  padding: 0.45rem 0.8rem;
   border-radius: 999px;
   background: var(--sea-soft);
   color: var(--sea);
-  font-size: 0.88rem;
+  font-size: 1rem;
   font-weight: 800;
 }
 
 .event-card__title {
   margin: 0;
-  font-size: 1.12rem;
+  font-size: 1.35rem;
+  line-height: 1.2;
   font-weight: 800;
 }
 
 .event-card__venue {
   margin: 0;
-  font-size: 0.68rem;
+  font-size: 1.05rem;
   font-weight: 800;
   color: var(--sunset-deep);
 }
@@ -380,11 +376,11 @@ body {
 }
 
 .event-card__badge {
-  padding: 0.35rem 0.7rem;
-  background: #fff8ef;
-  border: 1px solid rgba(213, 94, 73, 0.12);
-  color: var(--ink-soft);
-  font-size: 0.8rem;
+  padding: 0.4rem 0.75rem;
+  background: #f4fbfa;
+  border: 1px solid rgba(13, 109, 118, 0.16);
+  color: var(--ink);
+  font-size: 1rem;
   font-weight: 700;
 }
 
@@ -420,6 +416,7 @@ body {
 
   .day-menu {
     padding: 1.5rem 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
   }
 
   .tab-content {
@@ -433,7 +430,7 @@ body {
   }
 
   .event-card {
-    grid-template-columns: 10rem minmax(0, 1fr);
+    grid-template-columns: 12rem minmax(0, 1fr);
     align-items: start;
   }
 
