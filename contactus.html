@@ -76,6 +76,7 @@
 								class="contact-form"
 								action="https://example.com/webhooks/festival-contact"
 								method="post"
+								data-json-submit="true"
 							>
 								<div class="row g-4">
 									<div class="col-12">
@@ -129,14 +130,27 @@
 											required
 										>
 									</div>
+
+									<div class="col-12">
+										<label class="form-label" for="message">Message</label>
+										<textarea
+											class="form-control form-control-lg"
+											id="message"
+											name="message"
+											rows="5"
+											placeholder="Tell us how we can help"
+										></textarea>
+									</div>
 								</div>
 
 								<p class="contact-form__note">
-									Placeholder webhook in use. Update the form action when the live endpoint is available.
+									This form sends a JSON payload to the webhook endpoint. Update the form action when the live endpoint is available.
 								</p>
 
+								<p class="contact-form__status" data-form-status aria-live="polite"></p>
+
 								<div class="contact-form__actions">
-									<button class="btn btn-lg contact-form__submit" type="submit">Send details</button>
+									<button class="btn btn-lg contact-form__submit" type="submit" data-submit-button>Send details</button>
 									<a class="contact-link" href="index.html">Back to programme</a>
 								</div>
 							</form>
@@ -151,5 +165,63 @@
 				</div>
 			</footer>
 		</div>
+
+		<script>
+			const contactForm = document.querySelector('[data-json-submit="true"]');
+
+			if (contactForm) {
+				const submitButton = contactForm.querySelector('[data-submit-button]');
+				const statusElement = contactForm.querySelector('[data-form-status]');
+				const defaultButtonLabel = submitButton ? submitButton.textContent : '';
+
+				contactForm.addEventListener('submit', async (event) => {
+					event.preventDefault();
+
+					const payload = Object.fromEntries(new FormData(contactForm).entries());
+
+					if (statusElement) {
+						statusElement.textContent = 'Sending your details...';
+						statusElement.dataset.state = 'pending';
+					}
+
+					if (submitButton) {
+						submitButton.disabled = true;
+						submitButton.textContent = 'Sending...';
+					}
+
+					try {
+						const response = await fetch(contactForm.action, {
+							method: 'POST',
+							headers: {
+								'Content-Type': 'application/json',
+								Accept: 'application/json'
+							},
+							body: JSON.stringify(payload)
+						});
+
+						if (!response.ok) {
+							throw new Error('Webhook request failed');
+						}
+
+						contactForm.reset();
+
+						if (statusElement) {
+							statusElement.textContent = 'Your details were sent successfully.';
+							statusElement.dataset.state = 'success';
+						}
+					} catch (error) {
+						if (statusElement) {
+							statusElement.textContent = 'Unable to send details right now. Check the webhook URL and try again.';
+							statusElement.dataset.state = 'error';
+						}
+					} finally {
+						if (submitButton) {
+							submitButton.disabled = false;
+							submitButton.textContent = defaultButtonLabel;
+						}
+					}
+				});
+			}
+		</script>
 	</body>
 </html>
