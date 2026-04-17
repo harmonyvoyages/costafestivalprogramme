@@ -382,6 +382,93 @@ body {
   gap: 0.4rem;
 }
 
+.contact-page {
+  overflow: visible;
+}
+
+.contact-form {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.contact-form .form-label {
+  margin-bottom: 0.55rem;
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--ink);
+}
+
+.contact-form .form-control {
+  padding: 0.95rem 1rem;
+  border: 1px solid rgba(22, 51, 58, 0.18);
+  border-radius: 1rem;
+  font-size: 1rem;
+  color: var(--ink);
+  background: #fff;
+}
+
+.contact-form .form-control::placeholder {
+  color: rgba(36, 73, 81, 0.7);
+}
+
+.contact-form .form-control:focus {
+  border-color: rgba(13, 109, 118, 0.5);
+  box-shadow: 0 0 0 0.2rem rgba(13, 109, 118, 0.12);
+}
+
+.contact-form__note {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+}
+
+.contact-form__actions {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.9rem;
+}
+
+.contact-form__submit {
+  padding: 0.95rem 1.4rem;
+  border: 0;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #0d6d76 0%, #0a4f56 100%);
+  color: white;
+  font-size: 1rem;
+  font-weight: 800;
+  box-shadow: 0 12px 24px rgba(13, 109, 118, 0.18);
+}
+
+.contact-form__submit:hover,
+.contact-form__submit:focus-visible {
+  background: linear-gradient(135deg, #0f7882 0%, #0b5b63 100%);
+  color: white;
+}
+
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 3.5rem;
+  padding: 0.85rem 1.2rem;
+  border: 1px solid rgba(22, 51, 58, 0.16);
+  border-radius: 999px;
+  background: #fffdfa;
+  color: var(--ink);
+  font-size: 1rem;
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: 0 8px 18px rgba(22, 51, 58, 0.05);
+}
+
+.contact-link:hover,
+.contact-link:focus-visible {
+  color: var(--ink);
+  border-color: rgba(213, 94, 73, 0.45);
+}
+
 @media (min-width: 768px) {
   .hero {
     padding-top: 4.25rem;
@@ -424,6 +511,17 @@ body {
   .event-card__content {
     display: grid;
     gap: 0.5rem;
+  }
+
+  .contact-form__actions {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .contact-link {
+    width: auto;
+    min-width: 13rem;
   }
 }
 

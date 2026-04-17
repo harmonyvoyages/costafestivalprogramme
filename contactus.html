@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Costa Festival Ibiza 2026 Contact Form</title>
+		<meta
+			name="description"
+			content="Costa Festival Ibiza 2026 contact form for guest details and room information."
+		>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@400;500;600;700&display=swap"
+			rel="stylesheet"
+		>
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+			crossorigin="anonymous"
+		>
+		<link rel="stylesheet" href="styles.css">
+	</head>
+	<body>
+		<div class="site-shell">
+			<header class="hero">
+				<div class="container hero__inner">
+					<div class="hero__brand">
+						<div class="hero__logo-wrap">
+							<img
+								class="hero__logo"
+								src="https://costafestival.azureedge.net/wp-content/uploads/2023/09/Costa-Festival-Logo-White-351x351-1.webp"
+								alt="Costa Festival logo"
+							>
+						</div>
+						<p class="eyebrow">Costa Festival Ibiza</p>
+					</div>
+					<div class="hero__copy">
+						<div>
+							<h1>Contact Us</h1>
+							<p class="hero__dates">Guest details form</p>
+						</div>
+						<p class="hero__lede">
+							Share your contact information and room number with the festival team. This form is wired to a placeholder webhook URL for now.
+						</p>
+					</div>
+				</div>
+			</header>
+
+			<main class="container programme-app">
+				<section class="programme-panel">
+					<div class="programme-panel__header">
+						<div>
+							<p class="section-label">Guest form</p>
+							<h2>Festival Contact Details</h2>
+						</div>
+					</div>
+
+					<article class="day-page contact-page">
+						<header class="day-page__header">
+							<div>
+								<p class="section-label">Stay in touch</p>
+								<h3 class="day-page__title">Send your details</h3>
+							</div>
+							<div>
+								<p class="day-page__intro">
+									Complete the form below so the team can reach you during the festival if needed.
+								</p>
+							</div>
+						</header>
+
+						<div class="programme-scroll">
+							<!-- Replace the action URL when the live webhook endpoint is confirmed. -->
+							<form
+								class="contact-form"
+								action="https://example.com/webhooks/festival-contact"
+								method="post"
+							>
+								<div class="row g-4">
+									<div class="col-12">
+										<label class="form-label" for="fullname">Full name</label>
+										<input
+											class="form-control form-control-lg"
+											type="text"
+											id="fullname"
+											name="fullname"
+											autocomplete="name"
+											placeholder="Enter your full name"
+											required
+										>
+									</div>
+
+									<div class="col-12">
+										<label class="form-label" for="email">Email address</label>
+										<input
+											class="form-control form-control-lg"
+											type="email"
+											id="email"
+											name="email"
+											autocomplete="email"
+											placeholder="name@example.com"
+											required
+										>
+									</div>
+
+									<div class="col-12 col-md-6">
+										<label class="form-label" for="mobile">Mobile tel no</label>
+										<input
+											class="form-control form-control-lg"
+											type="tel"
+											id="mobile"
+											name="mobile"
+											autocomplete="tel"
+											placeholder="Enter your mobile number"
+											required
+										>
+									</div>
+
+									<div class="col-12 col-md-6">
+										<label class="form-label" for="room-number">Room Number</label>
+										<input
+											class="form-control form-control-lg"
+											type="text"
+											id="room-number"
+											name="room_number"
+											autocomplete="off"
+											placeholder="Enter your room number"
+											required
+										>
+									</div>
+								</div>
+
+								<p class="contact-form__note">
+									Placeholder webhook in use. Update the form action when the live endpoint is available.
+								</p>
+
+								<div class="contact-form__actions">
+									<button class="btn btn-lg contact-form__submit" type="submit">Send details</button>
+									<a class="contact-link" href="index.html">Back to programme</a>
+								</div>
+							</form>
+						</div>
+					</article>
+				</section>
+			</main>
+
+			<footer class="site-footer">
+				<div class="container footer__inner">
+					<p>Replace the placeholder webhook URL before publishing this contact form.</p>
+				</div>
+			</footer>
+		</div>
+	</body>
+</html>
